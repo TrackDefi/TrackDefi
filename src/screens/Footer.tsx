@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 export default function Footer() {
+  //comment
   return (
     <footer className="container-fluid footer">
       <hr></hr>
