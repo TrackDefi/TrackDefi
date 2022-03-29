@@ -30,7 +30,7 @@ function Home() {
   const [wallets, setWallets] = useState<string[]>();
   const [selectedWallet, setSelectedWallet] = useState<string>();
   const database = FireBase.firestore();
-  const [balance, setBalance] = useState<number>();
+  const [balance, setBalance] = useState<number>(0);
   const [Converterrate, setConverterrate] = useState<number>();
   const txType = "payment tx";
   useEffect(() => {
@@ -310,8 +310,8 @@ function Home() {
               </div>
               {show === true && (
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                  <Row>
-                    <Col sm={3}>
+                  <Row class="row d-flex justify-content-center">
+                    {/* <Col sm={3}>
                       <Nav variant="pills" className="flex-column">
                         <Nav.Item>
                           <Nav.Link eventKey="first">
@@ -319,8 +319,8 @@ function Home() {
                           </Nav.Link>
                         </Nav.Item>
                       </Nav>
-                    </Col>
-                    <Col sm={9}>
+                    </Col> */}
+                    <Col sm={12}>
                       <Tab.Content className="border">
                         <Tab.Pane eventKey="first">
                           <div className="p-3 m-3">
@@ -381,10 +381,10 @@ function Home() {
               <div className="row justify-content-center no-gutters mt-4">
                 <div className="col-6">
                   <button
-                    className="btn green text-light btn-lg btn-block"
+                    className="btn grn btn-lg btn-block"
                     onClick={connectToMyAlgo}
                   >
-                    Connect to My Algo
+                    Connect MyAlgo Wallet
                   </button>
                 </div>
               </div>
@@ -392,16 +392,16 @@ function Home() {
 
             {wallets && (
               <>
-                {!!balance && (
-                  <div className="row justify-content-center no-gutters mt-3 mb-4">
+                {/* {!!balance && (
+                  
+                )} */}
+                <div className="row justify-content-center no-gutters mt-3 mb-4">
                     <div className="col-6">
                       <h3 className="text-white">
-                        Balance: {balance / 1000000} Algos{" "}
+                        Balance: {balance / 1000000} ALGO{" "}
                       </h3>
                     </div>
-                  </div>
-                )}
-
+                </div>
                 <br />
                 <br></br>
 
@@ -415,7 +415,7 @@ function Home() {
                         >
                           {txType === "payment tx" && (
                             <>
-                              <Form.Group className="mb-3">
+                              <Form.Group className="mb-3 ml-5 mr-5">
                                 <Form.Control
                                   type="hidden"
                                   id="input4"
@@ -425,7 +425,7 @@ function Home() {
                                 />
                               </Form.Group>
 
-                              <Form.Group className="mb-3">
+                              <Form.Group className="mb-3 ml-5 mr-5">
                                 <Form.Control
                                   type="hidden"
                                   id="input1"
@@ -435,9 +435,9 @@ function Home() {
                                 />
                               </Form.Group>
 
-                              <Form.Group className="mb-3">
+                              <Form.Group className="mb-3  ml-5 mr-5">
                                 <Form.Label className="ml-5">
-                                  <b>Amount</b>
+                                  <b>Amount</b>(ALGO)
                                 </Form.Label>
                                 <Form.Control
                                   type="number"
@@ -448,7 +448,7 @@ function Home() {
                                 />
                               </Form.Group>
 
-                              <Form.Group className="mb-3">
+                              <Form.Group className="mb-3 ml-5 mr-5">
                                 <Form.Label className="ml-5">
                                   <b>Trackdefi Token</b>
                                 </Form.Label>
