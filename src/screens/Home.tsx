@@ -30,7 +30,7 @@ function Home() {
   const [wallets, setWallets] = useState<string[]>();
   const [selectedWallet, setSelectedWallet] = useState<string>();
   const database = FireBase.firestore();
-  const [balance, setBalance] = useState<number>(0);
+  const [balance, setBalance] = useState<number>();
   const [Converterrate, setConverterrate] = useState<number>();
   const txType = "payment tx";
   useEffect(() => {
@@ -392,16 +392,22 @@ function Home() {
 
             {wallets && (
               <>
-                {/* {!!balance && (
-                  
-                )} */}
-                <div className="row justify-content-center no-gutters mt-3 mb-4">
+                {!!balance && (
+                  <div className="row justify-content-center no-gutters mt-3 mb-4">
                     <div className="col-6">
-                      <h3 className="text-white">
-                        Balance: {balance / 1000000} ALGO{" "}
-                      </h3>
+                      {balance > 0 && (
+                        <h3 className="text-white">
+                          Balance: {balance / 1000000} Algos{" "}
+                        </h3>
+                      )}
+                      {balance <= 0 && (
+                        <h3 className="text-white">
+                          You currently have 0 Algorand in Your Wallet
+                        </h3>
+                      )}
                     </div>
-                </div>
+                  </div>
+                )}
                 <br />
                 <br></br>
 
