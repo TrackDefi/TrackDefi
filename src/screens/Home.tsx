@@ -50,7 +50,11 @@ function Home() {
         .do();
       const _balance = accountInfo.amount;
       // console.log(_balance)
-      setBalance(_balance);
+      if(_balance > 0){
+        setBalance(_balance);
+      }else{
+          setBalance(0);
+      }
     })();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -392,19 +396,12 @@ function Home() {
 
             {wallets && (
               <>
-                {!!balance && (
+                {balance != null && (
                   <div className="row justify-content-center no-gutters mt-3 mb-4">
                     <div className="col-6">
-                      {balance > 0 && (
                         <h3 className="text-white">
-                          Balance: {balance / 1000000} Algos{" "}
+                          Balance: {balance / 1000000} ALGO{" "}
                         </h3>
-                      )}
-                      {balance <= 0 && (
-                        <h3 className="text-white">
-                          You currently have 0 Algorand in Your Wallet
-                        </h3>
-                      )}
                     </div>
                   </div>
                 )}
