@@ -82,8 +82,8 @@ function Home() {
     },
 
     {
-      key: "TRANSACTION_ADDRESS",
-      text: "TRANSACTION_ADDRESS",
+      key: "TRANSACTION_ID",
+      text: "TRANSACTION ID",
       sortable: true,
     },
   ];
@@ -304,7 +304,7 @@ function Home() {
         <div
           className="container-fluid m-0 p-0 mb-5 text-white"
           style={{ height: "70px" }}
-        >
+          >
           <Navbars data={getfromnav} />
           <div className="container" style={{ textAlign: "center" }}>
             <>
@@ -315,15 +315,6 @@ function Home() {
               {show === true && (
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                   <Row class="row d-flex justify-content-center">
-                    {/* <Col sm={3}>
-                      <Nav variant="pills" className="flex-column">
-                        <Nav.Item>
-                          <Nav.Link eventKey="first">
-                            Wallet Configuration
-                          </Nav.Link>
-                        </Nav.Item>
-                      </Nav>
-                    </Col> */}
                     <Col sm={12}>
                       <Tab.Content className="border">
                         <Tab.Pane eventKey="first">
@@ -362,7 +353,7 @@ function Home() {
               <hr className="mt-5"></hr>
               <h1 className="display-4 text-white ">All Transactions </h1>
               <hr className="temper"></hr>
-              <div className="bg-white p-5 ">
+              <div className="bg-white p-5 overland">
                 <ReactDatatable
                   config={config}
                   records={alldata}
@@ -445,6 +436,8 @@ function Home() {
                                 <Form.Control
                                   type="number"
                                   id="input2"
+                                  min="50"
+                                  max="5000"
                                   name="amount"
                                   onChange={handleConvert}
                                   ref={register}

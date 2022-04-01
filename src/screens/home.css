@@ -15,3 +15,6 @@
 .dt {
   color: white !important;
 }
+.overland {
+    overflow: scroll !important;
+}

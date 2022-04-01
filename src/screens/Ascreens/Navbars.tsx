@@ -20,7 +20,8 @@ export default function Navbars(props) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Trackdefi</Navbar.Brand>
+      <Navbar.Brand href="#home"><img src="logo.svg" />Trackdefi</Navbar.Brand>
+        {/* <Navbar.Brand href="#home">Trackdefi</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end m-2">
           {isactive === false && (
