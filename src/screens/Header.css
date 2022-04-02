@@ -13,6 +13,12 @@
     #12c2e9
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.card_bg{
+    background-color: #000008;
+    margin: auto;
+    margin-top: 5px;
+    padding: 5px;
+}
 
 .tp {
   color: white;

@@ -365,7 +365,7 @@ function Home() {
         </div>
       )}
       {!authToken && (
-        <div className="container-fluid m-0 p-0 moris">
+        <div className="container-fluid m-0 p-0 moris justify-content-center">
           {!wallets && <Navbar />}
           {wallets && <Navbarconfirm />}
           {wallets && <hr className="text-white inca "></hr>}
