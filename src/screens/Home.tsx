@@ -82,8 +82,8 @@ function Home() {
     },
 
     {
-      key: "TRANSACTION_ID",
-      text: "TRANSACTION ID",
+      key: "TRANSACTION_ADDRESS",
+      text: "TRANSACTION_ADDRESS",
       sortable: true,
     },
   ];
@@ -92,7 +92,7 @@ function Home() {
     length_menu: [10, 20, 50],
     show_filter: true,
     show_pagination: true,
-    filename: "Transaction",
+    filename: "TrackDefi_Transactions",
     button: {
       excel: true,
       print: true,
@@ -368,8 +368,7 @@ function Home() {
         <div className="container-fluid m-0 p-0 moris justify-content-center">
           {!wallets && <Navbar />}
           {wallets && <Navbarconfirm />}
-          {wallets && <hr className="text-white inca "></hr>}
-
+          <hr className="text-white inca "></hr>
           <Header />
           <div className="container" style={{ textAlign: "center" }}>
             {!wallets && (
